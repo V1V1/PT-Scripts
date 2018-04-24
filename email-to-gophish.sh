@@ -15,7 +15,6 @@ if [ -f "$1" ]; then
 	printf '%s\n' "First Name" "Last Name" "Email" "Position" | paste -sd ','
 	for e in $(grep -o '[[:alnum:]+\.\_\-]*@[[:alnum:]+\.\_\-]*' "$1" | sort | uniq -i)
 	do
-	#echo "${first_name}"
 	printf '%s\n' "$(echo "${e}"| cut -d@ -f1)" "LAST_NAME" $e "POSITION" | paste -sd ','
 	done
 	
